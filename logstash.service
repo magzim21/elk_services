@@ -1,0 +1,23 @@
+[Unit]
+Description=Logstash
+Documentation=https://www.elastic.co
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=simple
+RuntimeDirectory=logstash
+PrivateTmp=true
+
+# !! CHANGE PATH TO YOURS
+WorkingDirectory=/opt/ELK-2020/logstash-7.8.1
+
+User=elk
+Group=elk
+
+# !! CHANGE PATH TO YOURS
+ExecStart=/opt/ELK-2020/logstash-7.8.1/bin/logstash -f config/logstash.conf
+
+[Install]
+WantedBy=multi-user.target

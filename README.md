@@ -3,6 +3,8 @@ systemd services for Elasticsearch, Logstash, Kibana
 
 Place these files in /usr/lib/systemd/system/
 
+Works on CentOs
+
 
 ### Tips:
 `systemctl daemon-reload`  Restart systemctl daemon   
